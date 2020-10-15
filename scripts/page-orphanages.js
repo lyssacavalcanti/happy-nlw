@@ -1,9 +1,22 @@
-const map = L.map('mapid').setView([51.505, -0.09], 13);
+const map = L.map('mapid').setView([-23.9624403,-46.3399801], 14);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+const icon = L.icon({
+    iconUrl: "./images/map-marker.svg", 
+    iconSize: [58,68],
+    iconAnchor:[29,68],
+    popupAnchor:[170,2]   
+})
+
+const popup = L.popup({
+    closeButton:false,
+    className: 'map-popup',
+    minWidth: 240,
+    minHeight: 240
+}).setContent('Lar das Meninas <a href="orphanage.html?id=1" class="choose-orphanage" class="choose-orphanage"> <img src="./images/arrow-white.svg"></a>')
+
+L  
+    .marker([-23.9624403,-46.3399801],{icon})
+    .addTo(map)
+    .bindPopup(popup)
