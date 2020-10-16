@@ -22,3 +22,26 @@ L
     .marker([-23.9624403,-46.3399801],{icon})
     .addTo(map)
     
+
+    function selectImage() {
+        console.log("clicado")
+    }
+
+    function selectImage(event) {
+        const button = event.currentTarget
+
+        console.log(button.children)
+
+        const buttons = document.querySelectorAll(".images button")
+        buttons.forEach(removeActiveClass)
+
+        function removeActiveClass(button) {
+            button.classList.remove("active")
+        }
+        const image = button.children[0]
+        const imageContainer = document.querySelector(".orphanage-details > img")
+
+        imageContainer.src = image.src
+
+        button.classList.add('active')
+    }
