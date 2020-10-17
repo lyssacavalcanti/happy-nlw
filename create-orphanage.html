@@ -57,7 +57,7 @@
             </div>
 
             <div class="input-block">
-              <label for="about">Sobre<span>Máximo de 300 caracteres</span></label>
+              <label for="about">Sobre <span>Máximo de 300 caracteres</span></label>
               <textarea id="about"name="about"></textarea>
             </div>
 
@@ -65,10 +65,33 @@
               <label for="whatsapp">Número de Whatsapp</label>
               <input id="whatsapp" name="whatsapp">
             </div>
+            
+            <div class="input-block images">
+              <label for="images">Foto</label>
+              <div class="images-upload" id="images">
+              <input name= "images" placeholder="Cole o link da foto aqui">
+            </div>
+            <button type="button">
+              <img src="./images/add-file.svg" alt="Nova imagem"/>
+            </button>
 
           </fieldset>
           <fieldset>
             <legend>Visitação</legend>
+            <div class="input-block">
+              <label for="instructions">Instruções</label>
+              <textarea id="instructions"name="instructions"></textarea>
+            </div>
+
+            <div class="input-block">
+              <label for="opening-hours">Horário de visitas</label>
+              <input id="opening-hours"name="opening-hours"/>
+            </div>
+
+            <div class="input-block">
+              <label for="open-on-weekends">Atende fim de semana?</label>
+              <input type="hidden" id="open-on-weekends" name="open-on-weekends" value="1"/>
+            </div>
           </fieldset>
         </form>
       </main>
