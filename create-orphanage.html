@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/sidebar.css" />
     <link rel="stylesheet" href="./css/map.css" />
     <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
     <link rel="stylesheet" href="./css/page-create-orphanage.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
@@ -86,12 +87,14 @@
             <div class="input-block">
               <label for="opening-hours">Horário de visitas</label>
               <input id="opening-hours"name="opening-hours"/>
+
+            <div class="button-select">
+              <button type="button" class="active">Sim</button>
+              <button type="button">Não</button>
             </div>
 
-            <div class="input-block">
-              <label for="open-on-weekends">Atende fim de semana?</label>
-              <input type="hidden" id="open-on-weekends" name="open-on-weekends" value="1"/>
-            </div>
+            <button type="submit" class="primary-button">Confirmar</button>
+          </div>
           </fieldset>
         </form>
       </main>
