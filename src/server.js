@@ -9,10 +9,16 @@ server
 // Utilizando arquivos estáticos 
 .use(express.static('public'))
 
-// Criar rota
-.get('/', (request, response) => {
-    return response.sendFile(path.join(__dirname, 'views', 'index.html'))
-})
+// Configurar template engine
+.set('views', path.join(__dirname, "views"))
+.set('view engine', 'hbs')
+
+// Rotas de aplicação
+.get('/', pages.index)
+.get('/orphanage', pages.orphanage)
+.get('/orphanages', pages.orphanages)
+.get('/create-orphanage', pages.createOrphanage)
+
 
 // Ligar servidor
 server.listen(5500)
