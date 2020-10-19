@@ -47,3 +47,14 @@ function deleteField(event) {
     }
     span.parentNode.remove()
 }
+
+function toggleSelect(event) {
+    document.querySelectorAll('.button-select button')
+    .forEach(function(button) {
+        button.classList.remove('active')
+    })
+    const button = event.currentTarget
+    button.classList.add('active')
+    const input = document.querySelector('[name="open-on-weekends"]')
+    input.value = button.dataset.value
+}
