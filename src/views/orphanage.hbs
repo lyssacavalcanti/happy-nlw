@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lar das Meninas | Happy</title>
+    <title>{{orphanage.name}}</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -30,40 +30,23 @@
           </button>
         </footer>
       </aside>
+
       <main class="animate-appear with-sidebar">
       <div class="orphanage-details">
-        <img src="./images/home.jpg" alt="Lar das Meninas">
+        <img src="{{orfanate.firstImage}}" alt="{{orphanage.name}}">
 
         <div class="images">
+          {{#each orphanage.images}}
           <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=1" alt="Lar das Meninas">
+            <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}"/>
           </button>
-
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=2" alt="Lar das Meninas">
-          </button>
-
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=3" alt="Lar das Meninas">
-          </button>
-
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=4" alt="Lar das Meninas">
-          </button>
-
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=5" alt="Lar das Meninas">
-          </button>
-
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="https://source.unsplash.com/random?id=6" alt="Lar das Meninas">
-          </button>
-
+          {{/each}}
+          
         </div>
 
         <div class = "orphanage-details-content">
 
-          <h1>Lar das Meninas</h1>
+          <h1>{{orphanage.name}}</h1>
 
           <p> Presta assistência a crianças de 06 a 15 anos que se encontram em situação de risco e/ou vulnerabilidade social.</p>
           
@@ -76,7 +59,9 @@
 
           <hr>Instruções para visita</h2>
 
-          <p>Vista-se confortavelmente e traga muito amor para compartilhar.</p>
+          <p>
+            {{orphanage.images}}
+            Vista-se confortavelmente e traga muito amor para compartilhar.</p>
 
           <div class="open-details">
             <div class="hour">
